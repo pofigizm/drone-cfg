@@ -1,0 +1,172 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
+# config: manufacturer_id: FOXE, board_name: FOXEERF722V3, version: 66f6d4df, date: 2022-04-18T09:47:43Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name FOXEERF722V3
+manufacturer_id FOXE
+mcu_id 002100114232500620343639
+signature 
+
+# name: pfgzm y
+
+# feature
+feature -RX_PARALLEL_PWM
+feature -AIRMODE
+feature RX_SERIAL
+feature TELEMETRY
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 1 2 115200 57600 0 115200
+serial 4 2048 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# led
+led 0 15,0::C:0
+led 1 14,0::C:0
+led 2 13,0::C:0
+led 3 12,0::C:0
+led 4 11,0::C:0
+led 5 10,0::C:0
+led 6 9,0::C:0
+led 7 8,0::C:0
+led 8 7,0::C:0
+led 9 6,0::C:0
+led 10 5,0::C:0
+led 11 4,0::C:0
+
+# aux
+aux 0 0 0 1800 2100 0 0
+aux 1 13 2 900 1200 0 0
+aux 2 19 4 1800 2100 0 0
+aux 3 35 3 1800 2100 0 0
+aux 4 39 1 900 1200 0 0
+aux 5 39 0 900 900 0 45
+aux 6 45 7 1925 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 14 20 26 36
+vtxtable powerlabels 25 100 400 MAX
+
+# master
+set acc_calibration = -49,-18,13,1
+set serialrx_provider = CRSF
+set motor_pwm_protocol = DSHOT600
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set ledstrip_profile = RACE
+set ledstrip_race_color = RED
+set osd_cap_alarm = 2000
+set osd_alt_alarm = 50
+set osd_tim2 = 2577
+set osd_vbat_pos = 449
+set osd_rssi_pos = 14369
+set osd_link_quality_pos = 33
+set osd_link_tx_power_pos = 33
+set osd_rssi_dbm_pos = 65
+set osd_tim_1_pos = 439
+set osd_tim_2_pos = 14804
+set osd_anti_gravity_pos = 145
+set osd_throttle_pos = 14393
+set osd_vtx_channel_pos = 14379
+set osd_mah_drawn_pos = 385
+set osd_craft_name_pos = 14792
+set osd_warnings_pos = 14633
+set osd_avg_cell_voltage_pos = 14785
+set osd_pit_ang_pos = 55
+set osd_rol_ang_pos = 87
+set osd_battery_usage_pos = 49386
+set osd_rtc_date_time_pos = 41
+set osd_rcchannels_pos = 152
+set osd_total_flights_pos = 14800
+set osd_stat_max_spd = OFF
+set osd_stat_battery = ON
+set osd_stat_bbox = OFF
+set osd_stat_bb_no = OFF
+set osd_stat_max_esc_temp = ON
+set osd_stat_max_esc_rpm = ON
+set osd_stat_min_link_quality = ON
+set osd_stat_total_flights = ON
+set vtx_band = 5
+set vtx_channel = 7
+set vtx_power = 2
+set vtx_freq = 5880
+set vcd_video_system = PAL
+set gyro_1_align_yaw = 1800
+set stats_min_armed_time_s = 60
+set stats_total_flights = 2
+set stats_total_time_s = 120
+set name = pfgzm y
+
+profile 0
+
+# profile 0
+set feedforward_smooth_factor = 60
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 1
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 10
+set pitch_rc_rate = 10
+set yaw_rc_rate = 10
+set roll_expo = 31
+set pitch_expo = 31
+set yaw_expo = 31
+set throttle_limit_type = SCALE
+
+rateprofile 1
+
+# rateprofile 1
+set roll_rc_rate = 24
+set pitch_rc_rate = 20
+set yaw_rc_rate = 16
+set roll_expo = 20
+set pitch_expo = 20
+set yaw_expo = 100
+set roll_srate = 70
+set pitch_srate = 60
+set yaw_srate = 50
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 1
+
+# save configuration
